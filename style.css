@@ -1,0 +1,14 @@
+body{margin:0;background:#17142b}
+a{color:#3f3aa8}
+a:hover{color:#17142b}
+input::placeholder{color:#8f87bd}
+input[type=email]:focus{border-color:#e6ff2e!important}
+input[type=submit]:hover{background:#f2ff8a!important}
+.nav-dark:hover{color:#e6ff2e!important}
+.nav-light:hover{color:#221d3d!important}
+.btn-neon:hover{background:#e6ff2e;color:#17142b!important}
+.btn-ghost:hover{border-color:#e4dcff!important;color:#e4dcff!important}
+@keyframes csSpin{to{transform:rotate(360deg)}}
+.cs-spin{animation:csSpin 180s linear infinite}
+@media (prefers-reduced-motion:reduce){.cs-spin{animation:none}}
+html{scroll-behavior:smooth}

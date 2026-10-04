@@ -1,0 +1,31 @@
+(function () {
+  var pal = ['#b9a6ff', '#8f9bff', '#c7b4ff', '#a6e4ff', '#e7c6ff', '#7f7cf0', '#d9cfff'];
+  var n = 0;
+  function mark(el) {
+    var size = el.dataset.size ? +el.dataset.size : Math.min(380, window.innerWidth - 48);
+    var disc = el.dataset.disc === '1';
+    var uid = 'm' + (n++);
+    var s = 7;
+    function rnd() { s = (s * 9301 + 49297) % 233280; return s / 233280; }
+    var rays = '';
+    for (var i = 0; i < 56; i++) {
+      var rot = (i * 360 / 56 + (rnd() - .5) * 4).toFixed(1), len = Math.round(50 + rnd() * 95), w = rnd() > .75 ? 2 : 1, c = pal[Math.floor(rnd() * pal.length)];
+      rays += '<div style="position:absolute;left:50%;bottom:50%;width:' + w + 'px;height:' + len + 'px;background:linear-gradient(to top,' + c + ',rgba(23,20,43,0));transform-origin:bottom center;transform:rotate(' + rot + 'deg)"></div>';
+    }
+    var g = 'g' + uid, h = 'h' + uid, p = 'p' + uid;
+    var svg = '<svg width="380" height="380" viewBox="-160 -160 320 320" style="position:absolute;inset:0;filter:drop-shadow(0 0 7px rgba(160,140,255,.7)) drop-shadow(0 0 26px rgba(120,130,255,.3))">' +
+      '<defs><linearGradient id="' + g + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9d8ff"/><stop offset=".3" stop-color="#9fb0ff"/><stop offset=".55" stop-color="#bff0ff"/><stop offset=".75" stop-color="#b48cff"/><stop offset="1" stop-color="#f2d6ff"/></linearGradient>' +
+      '<radialGradient id="' + h + '"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#d8c8ff"/><stop offset="1" stop-color="#7a7fee" stop-opacity="0"/></radialGradient>' +
+      '<path id="' + p + '" d="M -136,0 a 136,136 0 1,1 272,0 a 136,136 0 1,1 -272,0"/></defs>' +
+      '<circle r="104" fill="none" stroke="url(#' + g + ')" stroke-width="4" stroke-linecap="round" stroke-dasharray="0 13"/>' +
+      '<circle r="66" fill="none" stroke="#e6ff2e" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0 13" style="filter:drop-shadow(0 0 4px rgba(230,255,46,.8))"/>' +
+      '<text style="font-family:\'Share Tech Mono\',monospace;font-size:30px" fill="url(#' + g + ')"><textPath href="#' + p + '" textLength="850" lengthAdjust="spacing">CENTER · STUDY · CENTER · STUDY ·</textPath></text>' +
+      '<circle r="28" fill="url(#' + h + ')"/></svg>';
+    el.style.cssText += ';width:' + size + 'px;height:' + size + 'px;position:relative;flex:none;' + (disc ? 'border-radius:50%;background:#17142b;overflow:hidden;' : '');
+    el.innerHTML = '<div style="position:absolute;left:0;top:0;width:380px;height:380px;transform:scale(' + (size / 380) + ');transform-origin:0 0">' +
+      '<div class="cs-spin" style="position:absolute;inset:0">' +
+      '<div style="position:absolute;inset:0;opacity:.55;filter:drop-shadow(0 0 5px rgba(160,140,255,.6))"><div style="position:absolute;left:50%;top:50%;width:0;height:0"><div style="position:absolute;width:320px;height:320px;left:-160px;top:-160px;transform:scale(1.19)">' + rays + '</div></div></div>' +
+      svg + '</div></div>';
+  }
+  document.querySelectorAll('[data-mark]').forEach(mark);
+})();
