@@ -10,7 +10,7 @@ input[type=submit]:hover{background:#f2ff8a!important}
 .btn-ghost:hover{border-color:#e4dcff!important;color:#e4dcff!important}
 @keyframes csSpin{to{transform:rotate(360deg)}}
 .cs-spin{animation:csSpin 180s linear infinite}
-@keyframes csRadiate{0%,25%{transform:translate(0,0) rotate(0);opacity:1}50%,60%{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:.75}85%,100%{transform:translate(0,0) rotate(0);opacity:1}}
-.cs-letter{transform-box:fill-box;transform-origin:center;animation:csRadiate 22s ease-in-out infinite}
+@keyframes csRadiate{0%,6%{transform:translate(0,0) rotate(0);opacity:1}40%,55%{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:.75}90%,100%{transform:translate(0,0) rotate(0);opacity:1}}
+.cs-letter{transform-box:fill-box;transform-origin:center;animation:csRadiate 20s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){.cs-spin,.cs-letter{animation:none}}
 html{scroll-behavior:smooth}
