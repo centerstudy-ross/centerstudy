@@ -18,7 +18,7 @@
       var x = Math.cos(rad) * 136, y = Math.sin(rad) * 136;
       var d = 22 + rnd() * 70, dx = (rnd() - .5) * 30, r = (rnd() - .5) * 70, delay = (rnd() * 1.6).toFixed(2);
       var t = Math.min(1, Math.max(0, (x + y + 192) / 384));
-      out += '<g transform="rotate(' + (deg + 90) + ')"><text class="cs-letter" y="-136" text-anchor="middle" fill="' + col(t) + '" style="font-family:\'Share Tech Mono\',monospace;font-size:30px;animation-delay:' + delay + 's;--dx:' + dx.toFixed(1) + 'px;--dy:' + (-d).toFixed(1) + 'px;--r:' + r.toFixed(0) + 'deg">' + str[i] + '</text></g>';
+      out += '<g transform="rotate(' + (deg + 90) + ')"><text class="cs-letter" y="-136" text-anchor="middle" fill="' + col(t) + '" style="font-family:\'IBM Plex Mono\',monospace;font-size:30px;animation-delay:' + delay + 's;--dx:' + dx.toFixed(1) + 'px;--dy:' + (-d).toFixed(1) + 'px;--r:' + r.toFixed(0) + 'deg">' + str[i] + '</text></g>';
     }
     return out + '</g>';
   }
