@@ -9,38 +9,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
-<div class="shell">
-<aside class="side">
-<div>
-<p class="name"><a href="index.html">centerstudy</a></p>
-<p class="tagline">Led by Amina Ross. Brooklyn, New York.</p>
-</div>
-<nav aria-label="Pages">
-<span class="label">Pages</span>
-<ul class="pages">
-<li><a href="what.html"><span>What is centerstudy</span><span class="n">01</span></a></li>
-<li><a href="about.html" aria-current="page"><span>About</span><span class="n">02</span></a></li>
-<li><a href="offerings.html"><span>Offerings</span><span class="n">03</span></a></li>
-<li><a href="objects.html"><span>Study Objects</span><span class="n">04</span></a></li>
-</ul>
+<div class="page">
+<header class="top">
+<a class="brand" href="index.html"><span data-mark="small" data-size="34" data-disc="1" aria-hidden="true"></span><span>centerstudy</span></a>
+<nav class="topnav" aria-label="Pages">
+<a href="what.html">What is centerstudy</a>
+<a href="about.html" aria-current="page">About</a>
+<a href="offerings.html">Offerings</a>
+<a href="objects.html">Study Objects</a>
 </nav>
-<div class="signup" id="mailing-list">
-<span class="label">Mailing list</span>
-<p>Hear first when doors open and when study objects are ready.</p>
-<form action="https://buttondown.com/api/emails/embed-subscribe/centerstudy" method="post" target="_blank" class="embeddable-buttondown-form">
-<label for="bd-email" class="visually-hidden">Enter your email</label>
-<input type="email" name="email" id="bd-email" class="field" required placeholder="your@email.com">
-<button type="submit" class="btn solid">Subscribe</button>
-</form>
-</div>
-<div>
-<span class="label">Elsewhere</span>
-<div class="quick"><a href="https://aminaross.info" target="_blank" rel="noopener">Artist archive &#8599;</a></div>
-</div>
-</aside>
+</header>
 <main class="main">
 <div class="pagebar"><h1 class="label">About</h1></div>
 <div class="portrait-row">
@@ -69,7 +50,22 @@
 </article>
 </section>
 </main>
-<p class="colophon"><span>&copy; 2026 centerstudy</span><a href="index.html">centerstudy.info</a></p>
+<footer class="foot" id="mailing-list">
+<div class="signup">
+<span class="label">Mailing list</span>
+<p>Hear first when doors open and when study objects are ready.</p>
+<form action="https://buttondown.com/api/emails/embed-subscribe/centerstudy" method="post" target="_blank" class="embeddable-buttondown-form">
+<label for="bd-email" class="visually-hidden">Enter your email</label>
+<input type="email" name="email" id="bd-email" class="field" required placeholder="your@email.com">
+<button type="submit" class="btn solid">Subscribe</button>
+</form>
 </div>
+<div class="foot-meta">
+<a href="https://aminaross.info" target="_blank" rel="noopener">Artist archive &#8599;</a>
+<span>&copy; 2026 centerstudy</span>
+</div>
+</footer>
+</div>
+<script src="logo.js?v=8"></script>
 </body>
 </html>
